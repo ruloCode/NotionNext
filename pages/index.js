@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Hero } from '../components/hero/Hero'
 
 import { getAllPublished } from '../lib/notion';
+import ResentPost from '../components/resentPosts/ResentPost';
 
 export default function Home({posts}) {
   if(!posts) return <h1>No posts</h1>
@@ -16,22 +17,7 @@ export default function Home({posts}) {
       <main >
       <Hero />
 
-        <h1>Blog</h1>
-        {posts.map((post, index) => (
-          <section key={index} >
-            <div>
-                <h2><Link href={`/posts/${post.slug}`}>
-                <a >{post.title}</a>
-                </Link></h2>
-                <div>
-                    {post.date}
-                </div>
-            </div>
-            <p>
-              {post.description}
-            </p>
-          </section>
-        ))}
+      <ResentPost posts={posts}/>
       </main>
     </div>
   )
