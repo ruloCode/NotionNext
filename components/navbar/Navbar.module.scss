@@ -1,0 +1,25 @@
+.navbar {
+  list-style: none;
+
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-30);
+    justify-content: flex-end;
+  }
+  &__item {
+    color: var(--colors-black);
+    font-weight: var(--font-weight-semibold);
+    p {
+      border-bottom: 1px solid transparent;
+      transition: 0.5s;
+    }
+
+    p:hover {
+      border-bottom: 1px solid var(--colors-black);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
