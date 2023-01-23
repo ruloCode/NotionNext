@@ -1,8 +1,9 @@
 
 .hero {
-  margin-top: var(--spacing-10);
   position: relative;
   text-align: center;
+
+  padding: var(--spacing-40) 0;
   &-content {
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
 @media only screen and (min-width: 768px) {
   .hero {
     text-align: left;
-  margin-top: var(--spacing-40);
+  padding: var(--spacing-40) 0;
 
     &-content {
     flex-direction: row-reverse;

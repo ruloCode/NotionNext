@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import Link from 'next/link';
+import Link from 'next/link';
 
 // import classnames from 'classnames';
 // import { getClasses } from '../../utils/classesFormater';
@@ -27,10 +27,16 @@ export const MainHeader = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.navContainer}>
-        <div className={styles.logo}>
+
+
+      <Link href={`/`}>
+
+              <a className={styles.logo} >
           Rulo
-          <span>Code</span>.com
-        </div>
+          <span>Code</span>
+              </a>
+            </Link>
+      
 
         <Navbar />
        

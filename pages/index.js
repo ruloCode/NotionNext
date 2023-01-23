@@ -1,12 +1,13 @@
 import Head from 'next/head'
-import Link from 'next/link';
 import { Hero } from '../components/hero/Hero'
 
 import { getAllPublished } from '../lib/notion';
-import ResentPost from '../components/resentPosts/ResentPost';
+import RecentPost from '../components/recentPosts/RecentPost';
 
 export default function Home({posts}) {
   if(!posts) return <h1>No posts</h1>
+
+  let PostsToShow = posts.slice(0, 3)
   return (
     <div >
       <Head>
@@ -17,7 +18,7 @@ export default function Home({posts}) {
       <main >
       <Hero />
 
-      <ResentPost posts={posts}/>
+      <RecentPost posts={PostsToShow}/>
       </main>
     </div>
   )
