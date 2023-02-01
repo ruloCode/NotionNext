@@ -13,27 +13,29 @@ return (
 }
 const Post = ({ post }) => {
   return (
-      <section className={styles.container}> 
-        <h2>{post.metadata.title}</h2>
-        <span>{post.metadata.date}</span>
-        <p style={{color: "gray"}}>{post.metadata.tags.join(', ')}</p>
-        <ReactMarkdown
-        components={{
-            code({node, inline, className, children, ...props}) {
-            const match = /language-(\w+)/.exec(className || '')
-            return !inline && match ? (
-                <CodeBlock
-                codestring={String(children).replace(/\n$/, '')}
-                language={match[1]}
-                />
-            ) : (
-                <code className={className} {...props}>
-                {children}
-                </code>
-            )
-            }
-        }}>{post.markdown}</ReactMarkdown>
-      </section>
+     <div className='wrapper'>
+       <section className={styles.container}> 
+         <h2>{post.metadata.title}</h2>
+         <span>{post.metadata.date}</span>
+         <p style={{color: "gray"}}>{post.metadata.tags.join(', ')}</p>
+         <ReactMarkdown
+         components={{
+             code({node, inline, className, children, ...props}) {
+             const match = /language-(\w+)/.exec(className || '')
+             return !inline && match ? (
+                 <CodeBlock
+                 codestring={String(children).replace(/\n$/, '')}
+                 language={match[1]}
+                 />
+             ) : (
+                 <code className={className} {...props}>
+                 {children}
+                 </code>
+             )
+             }
+         }}>{post.markdown}</ReactMarkdown>
+       </section>
+     </div>
   );
 };
 

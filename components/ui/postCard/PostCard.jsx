@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import styles from './postCard.module.scss'
+import styles from "./postCard.module.scss";
 
-const PostCard = ({  post }) => {
+const PostCard = ({ post }) => {
   return (
-    <section className={styles.postCard} >
+    <section className={styles.postCard}>
       <div>
         <h2>
           <Link href={`/posts/${post.slug}`}>
