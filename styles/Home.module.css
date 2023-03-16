@@ -1,5 +1,13 @@
 .container {
-  padding: 0 2rem;
+  padding-top: 2rem;
+
+
+  position: relative;
+
+  --wrapper-width: 75%;
+
+  padding-right: calc(50vw - (var(--wrapper-width) / 2));
+  padding-left: calc(50vw - (var(--wrapper-width) / 2));
 }
 
 .main {

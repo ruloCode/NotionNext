@@ -6,9 +6,11 @@ import styles from '../../styles/Home.module.css'
 
 const CodeBlock = ({ language, codestring }) => {
 return (
-    <SyntaxHighlighter language={language} style={vscDarkPlus} PreTag="div">
-        {codestring}
-    </SyntaxHighlighter>
+    <div class='wrapper'>
+      <SyntaxHighlighter language={language} style={vscDarkPlus} PreTag="div">
+          {codestring}
+      </SyntaxHighlighter>
+    </div>
 )
 }
 const Blog = ({ post }) => {
