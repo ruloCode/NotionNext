@@ -11,7 +11,7 @@ return (
     </SyntaxHighlighter>
 )
 }
-const Post = ({ post }) => {
+const Blog = ({ post }) => {
   return (
       <section className={styles.container}> 
         <h2>{post.metadata.title}</h2>
@@ -56,4 +56,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default Post;
+export default Blog;

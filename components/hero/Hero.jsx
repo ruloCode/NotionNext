@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import styles from './Hero.module.scss';
-import ProfilePhoto from '../../assets/rulo_profile.webp';
-import { Button } from '../ui/button/Button';
+import styles from "./Hero.module.scss";
+import ProfilePhoto from "../../assets/rulo_profile.webp";
+import { Button } from "../ui/button/Button";
 
 export const Hero = () => {
   return (
     <div className="wrapper">
       <section className={styles.hero}>
-        <div className={styles['hero-content']}>
-          <div className={styles['hero-img']}>
+        <div className={styles["hero-content"]}>
+          <div className={styles["hero-img"]}>
             <Image
               alt="User profile photo"
               src={ProfilePhoto}
@@ -19,22 +19,14 @@ export const Hero = () => {
               priority
             />
           </div>
-          <div className={styles['hero-data']}>
-            <h1 className={styles['hero-title']}>
-              Hi, I am Rulo, <br /> Web Developer
+          <div className={styles["hero-data"]}>
+            <h1 className={styles["hero-title"]}>
+              Hello, my name is Rulo, <br /> Web Developer
             </h1>
 
             <p>
-              Creating the next web generation. I want to make sure that the
-              internet is a safe, satisfying and secure place for everyone.
+            Dedicated to shaping the web's future, I focus on creating a safe, rewarding, and secure online experience for all. Embracing innovation and the latest technologies, I aim to deliver outstanding user experiences that foster positive digital transformation.
             </p>
-
-            {/* cambiar boton cuando se descarga que el boton cambie a about me */}
-            <div className={styles['hero-action']}>
-              {/* <a href="andres_santana_CV_compressed.pdf" download> */}
-              <Button>About me</Button>
-              {/* </a> */}
-            </div>
           </div>
         </div>
       </section>

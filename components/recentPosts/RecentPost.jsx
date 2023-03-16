@@ -12,7 +12,7 @@ export default function RecentPosts({posts}) {
            <h2 className={styles["recentPosts-title"]}>Recent Posts</h2>
           <p>
          <div className={styles["recentPosts-viewAll"]}>
-           <Link href={`/posts`}>
+           <Link href={`/blog`}>
                <a >View all</a>
              </Link>
          </div>

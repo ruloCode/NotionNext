@@ -7,7 +7,7 @@ const PostCard = ({  post }) => {
     <section className={styles.postCard} >
       <div>
         <h2>
-          <Link href={`/posts/${post.slug}`}>
+          <Link href={`/blog/${post.slug}`}>
             <a className={styles["postCard-title"]}>{post.title}</a>
           </Link>
         </h2>
