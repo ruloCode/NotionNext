@@ -7,24 +7,23 @@ import Link from "next/link";
 
 const PostPreviewWrapper = styled.div`
   /* Add your styles here */
+
+  background-color: var(--colors-brand-grey);
+
+  padding: var(--spacing-15);
+  text-align: left;
+
+  border-radius: var(--border-radius-medium);
 `;
 
-const PostTitle = styled.h3`
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-  a {
-    text-decoration: underline;
-  }
-`;
-
-const PostDate = styled.div`
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+const PostContent = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
 `;
 
 const PostExcerpt = styled.div`
-  font-size: 1.5rem;
+  font-size: var(--font-size-2);
   line-height: 1.6;
 `;
 
@@ -38,18 +37,13 @@ export default function PostPreview({
 }) {
   return (
     <PostPreviewWrapper>
-        <Link href={`/posts/${slug}`} className="hover:underline">
-
-   
-      <PostTitle>
-          <span dangerouslySetInnerHTML={{ __html: title }} />
-      </PostTitle>
-      <PostDate>
-        <Date dateString={date} />
-      </PostDate>
-      <PostExcerpt dangerouslySetInnerHTML={{ __html: excerpt }} />
-      </Link>
-
+      <PostContent href={`/posts/${slug}`}>
+        <h3 className="subtitle" dangerouslySetInnerHTML={{ __html: title }} />
+        <div className="subtitle-small">
+          <Date dateString={date} />
+        </div>
+        <PostExcerpt dangerouslySetInnerHTML={{ __html: excerpt }} />
+      </PostContent>
     </PostPreviewWrapper>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BgImage from "../../public/images/frames.png";
-
+import Link from "next/link";
 import styled from "styled-components";
 import Container from "../container";
 import PostPreview from "../post-preview";
@@ -15,6 +15,8 @@ const RecentPostContainer = styled.section`
   text-align: center;
   position: relative;
 
+  margin-top: 1rem;
+
   min-height: 400px;
 
   background-color: #090c0f;
@@ -24,22 +26,29 @@ const RecentPostContainer = styled.section`
     text-align: left;
     justify-content: flex-start;
     gap: 94px;
+    margin-top: 3rem;
   }
 `;
 
 const ImageWrapper = styled.div`
   position: absolute;
   width: 100%;
-  top: -5%;
+  top: -3%;
+  z-index: var(--z-index-0);
+
+  height: 100%;
 
   @media screen and (min-width: 425px) {
-    top: -8%;
+    top: -4%;
   }
   @media screen and (min-width: 768px) {
-    top: -12%;
+    top: -11%;
   }
   @media screen and (min-width: 1024px) {
-    top: -15%;
+    top: -17%;
+  }
+  @media screen and (min-width: 1440px) {
+    top: -20%;
   }
 `;
 
@@ -66,21 +75,23 @@ const RecentPostsHeader = styled.div`
     justify-content: space-between;
   }
 `;
-const ViewAll = styled.div`
+const ViewAll = styled(Link)`
   display: none;
-
-  a {
-    color: var(--colors-secondary);
-  }
 
   @media only screen and (min-width: 768px) {
     display: block;
+    z-index: var(--z-index-10);
+
+    text-decoration: underline;
   }
 `;
 const PostList = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-gap: 1rem;
+  position: relative;
+
+  z-index: var(--z-index-10);
 `;
 
 const RecentPost = ({ posts }) => {
@@ -96,27 +107,22 @@ const RecentPost = ({ posts }) => {
       <Container>
         <RecentPostsHeader>
           <h2>Recent Posts</h2>
-          <ViewAll>
-            <a>View all</a>
-          </ViewAll>
+          <ViewAll href={`/posts/`}>View all</ViewAll>
         </RecentPostsHeader>
         <PostList>
-       
-
-
-            {posts.map(({ node }) => (
-              <PostPreview
-                key={node.slug}
-                title={node.title}
-                coverImage={node.featuredImage}
-                date={node.date}
-                author={node.author}
-                slug={node.slug}
-                excerpt={node.excerpt}
-              />
-              // <p>posts</p>
-            ))}
-          </PostList>
+          {posts.map(({ node }) => (
+            <PostPreview
+              key={node.slug}
+              title={node.title}
+              coverImage={node.featuredImage}
+              date={node.date}
+              author={node.author}
+              slug={node.slug}
+              excerpt={node.excerpt}
+            />
+            // <p>posts</p>
+          ))}
+        </PostList>
       </Container>
     </RecentPostContainer>
   );
