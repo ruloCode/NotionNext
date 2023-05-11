@@ -66,6 +66,7 @@ const Hero = () => {
       <ImageWrapper>
         <ImageContainer
           src={ProfileImage}
+          alt="image"
           // width={150}
           // height={150}
         />

@@ -68,30 +68,7 @@ const Logo = styled.div`
   }
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  flex-direction: row;
 
-  @media (max-width: 768px) {
-    opacity: ${({ open }) => (open ? "1" : "0")};
-
-    position: absolute;
-    z-index: var(--z-index-50);
-    top: 60px;
-    right: 0;
-    width: 90%;
-    background-color: #282c34;
-    padding: 10px;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: calc(100vh - 60px);
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-    transition: 0.3s ease-in-out;
-
-    display: flex;
-  }
-`;
 
 const NavItem = styled(Link)`
   color: white;
@@ -115,12 +92,40 @@ const HamburgerMenu = styled.div`
   }
 `;
 
+
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const isActive = (path) => {
     return router.pathname === path;
   };
+
+
+  const Nav = styled.nav`
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    opacity: ${open ? "1" : "0"};
+
+    position: absolute;
+    z-index: var(--z-index-50);
+    top: 60px;
+    right: 0;
+    width: 90%;
+    background-color: #282c34;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100vh - 60px);
+    transform: ${open ? "translateX(0)" : "translateX(-100%)"};
+    transition: 0.3s ease-in-out;
+
+    display: flex;
+  }
+`;
 
   return (
     <Header>
@@ -138,8 +143,8 @@ const Navbar = () => {
         <HamburgerMenu onClick={() => setOpen(!open)}>
           {open ? <FaTimes /> : <FaBars />}
         </HamburgerMenu>
-        <Nav open={open}>
-          <NavItem href="/posts" isActive={isActive("/")}>
+        <Nav >
+          <NavItem href="/posts" >
             Blog
           </NavItem>
           {/* <NavItem href="/about" isActive={isActive("/about")}>
