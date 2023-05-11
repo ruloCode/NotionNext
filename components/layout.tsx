@@ -1,18 +1,23 @@
-import Navbar from './NavBar/Navbar'
-import Alert from './alert'
-import Footer from './footer'
-import Meta from './meta'
+import Navbar from "./NavBar/Navbar";
+import Alert from "./alert";
+import Footer from "./footer";
+import Meta from "./meta";
+import styled from "styled-components";
 
 export default function Layout({ preview, children }) {
+  const LayoutContainer = styled.div`
+    min-height: 100vh;
+  `;
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
+      <LayoutContainer>
         <Navbar />
-        {/* <Alert preview={preview} /> */}
         <main>{children}</main>
-      </div>
-      {/* <Footer /> */}
+      </LayoutContainer>
+
+      
+      <Footer />
     </>
-  )
+  );
 }

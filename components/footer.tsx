@@ -1,62 +1,68 @@
 import Container from "./container";
 import { EXAMPLE_PATH } from "../lib/constants";
-import LogoImage from '../public/images/Text.png'
-import Image from 'next/image'
-
+import LogoImage from "../public/images/Text.png";
+import Image from "next/image";
+import styled from "styled-components";
 
 export default function Footer() {
+  const Footer = styled.footer`
+   position: relative;
+   bottom: 0;
+  `;
+  const SocialContainer = styled.section`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    font-size: var(--font-size-4);
+    min-height: 150px;
+  `;
+
+  const Copyright = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: var(--spacing-40);
+  `;
+
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
+    <Footer>
       <Container>
-
-        <div className="mt-8 flex flex-col lg:flex-row items-center justify-center gap-8 flex-col text-lg ">
-        {/* <p className="secondaryFont">Nelson Guevara Farfan</p> */}
-
-        <div >
-          {/* <Link href="/" className=""> */}
-            <Image
-              src={LogoImage}
-              alt="Logo"
-              // width={50}
-              // height={50}
-              className="h-16 w-auto"
-            />
-          {/* </Link> */}
-      </div>
-
-        </div>
-
-        <div className="py-16 flex lg:flex-row items-center justify-center gap-8 text-lg">
+        <SocialContainer>
           <a
-            href="https://www.facebook.com/nelson.guevarafarfan"
+            href="https://github.com/ruloCode"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fab fa-facebook-square  socialIcon "></i>
+            <i className="fa-brands fa-github"></i>
           </a>
+
           <a
-            href="https://www.instagram.com/nelson.guevarafarfan/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fab fa-instagram socialIcon"></i>
-          </a>
-          <a
-            href="https://twitter.com/NelsonGuevaraF"
+            href="https://twitter.com/rulo_code"
             target="_blank"
             rel="noopener noreferrer"
           >
             <i className="fa-brands fa-twitter socialIcon"></i>
           </a>
           <a
-            href="https://www.tiktok.com/@nelsonguevarafarfan"
+            href="https://www.linkedin.com/in/rulocode/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i className="fa-brands fa-tiktok socialIcon"></i>
+            <i className="fa-brands fa-linkedin"></i>
           </a>
-        </div>
+          <a
+            href="https://www.instagram.com/rulocode/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className="fab fa-instagram socialIcon"></i>
+          </a>
+        </SocialContainer>
+
+        <Copyright>Copyright ©2023 All rights reserved</Copyright>
       </Container>
-    </footer>
+    </Footer>
   );
 }

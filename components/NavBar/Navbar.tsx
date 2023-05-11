@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Link from 'next/link'
+import Link from "next/link";
 
 // import Link from "next/link";
 // import Image from "next/image";
@@ -22,6 +22,7 @@ const Header = styled.header`
   height: 60px;
   position: relative;
   box-shadow: 0px 4px 120px rgba(0, 0, 0, 0.8);
+  position: relative;
 `;
 
 const HeaderContainer = styled.header`
@@ -70,12 +71,15 @@ const Logo = styled.div`
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
+
   @media (max-width: 768px) {
-    display: none;
+    opacity: ${({ open }) => (open ? "1" : "0")};
+
     position: absolute;
+    z-index: var(--z-index-50);
     top: 60px;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 90%;
     background-color: #282c34;
     padding: 10px;
     flex-direction: column;
@@ -83,7 +87,9 @@ const Nav = styled.nav`
     align-items: center;
     height: calc(100vh - 60px);
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-    transition: transform 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+
+    display: flex;
   }
 `;
 
@@ -119,15 +125,14 @@ const Navbar = () => {
   return (
     <Header>
       <HeaderContainer>
-        
         <Link href={`/`} className="hover:underline">
-        <Logo>
-          {/* <LogoImage src="/logo.png" alt="Logo" /> */}
-          <h1>
-            <span>Rulo</span>
-            Code
-          </h1>
-        </Logo>
+          <Logo>
+            {/* <LogoImage src="/logo.png" alt="Logo" /> */}
+            <h1>
+              <span>Rulo</span>
+              Code
+            </h1>
+          </Logo>
         </Link>
 
         <HamburgerMenu onClick={() => setOpen(!open)}>
@@ -137,12 +142,12 @@ const Navbar = () => {
           <NavItem href="/posts" isActive={isActive("/")}>
             Blog
           </NavItem>
-          <NavItem href="/about" isActive={isActive("/about")}>
+          {/* <NavItem href="/about" isActive={isActive("/about")}>
             Works
           </NavItem>
           <NavItem href="/contact" isActive={isActive("/contact")}>
             Academy
-          </NavItem>
+          </NavItem> */}
         </Nav>
       </HeaderContainer>
       {/* <LanguageButton /> */}
