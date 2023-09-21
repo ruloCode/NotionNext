@@ -1,213 +1,90 @@
-# An Incremental Static Regeneration Blog Example Using Next.js and WordPress
+<a href="https://precedent.dev">
+  <img alt="Precedent – Building blocks for your Next project" src="https://precedent.dev/opengraph-image">
+  <h1 align="center">Precedent</h1>
+</a>
 
-This example showcases Next.js's [Incremental Static Regeneration](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) feature using [WordPress](https://wordpress.org) as the data source.
+<p align="center">
+  Building blocks for your Next project
+</p>
 
-## Demo
+<p align="center">
+  <a href="https://twitter.com/steventey">
+    <img src="https://img.shields.io/twitter/follow/steventey?style=flat&label=steventey&logo=twitter&color=0bf&logoColor=fff" alt="Steven Tey Twitter follower count" />
+  </a>
+  <a href="https://github.com/steven-tey/precedent">
+    <img src="https://img.shields.io/github/stars/steven-tey/precedent?label=steven-tey%2Fprecedent" alt="Precedent repo star count" />
+  </a>
+</p>
 
-### [https://next-blog-wordpress.vercel.app](https://next-blog-wordpress.vercel.app)
+<p align="center">
+  <a href="#introduction"><strong>Introduction</strong></a> ·
+  <a href="#one-click-deploy"><strong>One-click Deploy</strong></a> ·
+  <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
+  <a href="#author"><strong>Author</strong></a>
+</p>
+<br/>
 
-## Deploy your own
+## Introduction
 
-Once you have access to [the environment variables you'll need](#step-3-set-up-environment-variables), deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+Precedent is an opinionated collection of components, hooks, and utilities for your Next.js project.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress&project-name=cms-wordpress&repository-name=cms-wordpress&env=WORDPRESS_API_URL&envDescription=Required%20to%20connect%20the%20app%20with%20WordPress&envLink=https://vercel.link/cms-wordpress-env)
+## One-click Deploy
 
-### Related examples
+You can deploy this template to Vercel with the button below:
 
-- [DatoCMS](/examples/cms-datocms)
-- [Sanity](/examples/cms-sanity)
-- [TakeShape](/examples/cms-takeshape)
-- [Prismic](/examples/cms-prismic)
-- [Contentful](/examples/cms-contentful)
-- [Strapi](/examples/cms-strapi)
-- [Agility CMS](/examples/cms-agilitycms)
-- [Cosmic](/examples/cms-cosmic)
-- [ButterCMS](/examples/cms-buttercms)
-- [Storyblok](/examples/cms-storyblok)
-- [GraphCMS](/examples/cms-graphcms)
-- [Kontent](/examples/cms-kontent)
-- [Ghost](/examples/cms-ghost)
-- [Blog Starter](/examples/blog-starter)
-- [Builder.io](/examples/cms-builder-io)
-- [DotCMS](/examples/cms-dotcms)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsteven-tey%2Fprecedent&project-name=precedent&repository-name=precedent&demo-title=Precedent&demo-description=An%20opinionated%20collection%20of%20components%2C%20hooks%2C%20and%20utilities%20for%20your%20Next%20project.&demo-url=https%3A%2F%2Fprecedent.dev&demo-image=https%3A%2F%2Fprecedent.dev%2Fopengraph-image&env=GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,NEXTAUTH_SECRET&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fsteven-tey%2Fprecedent%2Fblob%2Fmain%2F.env.example&stores=%5B%7B"type"%3A"postgres"%7D%5D)
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example cms-wordpress cms-wordpress-app
-```
+You can also clone & create this repo locally with the following command:
 
 ```bash
-yarn create next-app --example cms-wordpress cms-wordpress-app
+npx create-next-app precedent --example "https://github.com/steven-tey/precedent"
 ```
 
-```bash
-pnpm create next-app --example cms-wordpress cms-wordpress-app
-```
+## Tech Stack + Features
 
-## Configuration
+https://user-images.githubusercontent.com/28986134/212368288-12f41e37-aa8c-4e0a-a542-cf6d23410a65.mp4
 
-### Step 1. Prepare your WordPress site
+### Frameworks
 
-First, you need a WordPress site. There are many solutions for WordPress hosting, such as [WP Engine](https://wpengine.com/) and [WordPress.com](https://wordpress.com/).
+- [Next.js](https://nextjs.org/) – React framework for building performant apps with the best developer experience
+- [Auth.js](https://authjs.dev/) – Handle user authentication with ease with providers like Google, Twitter, GitHub, etc.
+- [Prisma](https://www.prisma.io/) – Typescript-first ORM for Node.js
 
-Once the site is ready, you'll need to install the [WPGraphQL](https://www.wpgraphql.com/) plugin. It will add GraphQL API to your WordPress site, which we'll use to query the posts. Follow these steps to install it:
+### Platforms
 
-- Download the [WPGraphQL repo](https://github.com/wp-graphql/wp-graphql) as a ZIP archive.
-- Inside your WordPress admin, go to **Plugins** and then click **Add New**.
+- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
+- [Vercel Postgres](https://vercel.com/postgres) – Serverless Postgres at the Edge
 
-![Add new plugin](./docs/plugins-add-new.png)
+### UI
 
-- Click the **Upload Plugin** button at the top of the page and upload the WPGraphQL plugin.
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development
+- [Radix](https://www.radix-ui.com/) – Primitives like modal, popover, etc. to build a stellar user experience
+- [Framer Motion](https://framer.com/motion) – Motion library for React to animate components with ease
+- [Lucide](https://lucide.dev/) – Beautifully simple, pixel-perfect icons
+- [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) – Optimize custom fonts and remove external network requests for improved performance
+- [`ImageResponse`](https://beta.nextjs.org/docs/api-reference/image-response) – Generate dynamic Open Graph images at the edge
+- [`react-wrap-balancer`](https://github.com/shuding/react-wrap-balancer) – Simple React component that makes titles more readable
 
-![Upload new plugin](./docs/plugins-upload-new.png)
+### Hooks and Utilities
 
-- Once the plugin has been added, activate it from either the **Activate Plugin** button displayed after uploading or from the **Plugins** page.
+- `useIntersectionObserver` –  React hook to observe when an element enters or leaves the viewport
+- `useLocalStorage` – Persist data in the browser's local storage
+- `useScroll` – React hook to observe scroll position ([example](https://github.com/steven-tey/precedent/blob/main/components/layout/navbar.tsx#L12))
+- `nFormatter` – Format numbers with suffixes like `1.2k` or `1.2M`
+- `capitalize` – Capitalize the first letter of a string
+- `truncate` – Truncate a string to a specified length
+- [`use-debounce`](https://www.npmjs.com/package/use-debounce) – Debounce a function call / state update
 
-![WPGraphQL installed](./docs/plugin-installed.png)
+### Code Quality
 
-#### GraphiQL
+- [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
+- [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
+- [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript
 
-The [WPGraphQL](https://www.wpgraphql.com/) plugin also gives you access to a GraphQL IDE directly from your WordPress Admin, allowing you to inspect and play around with the GraphQL API.
+### Miscellaneous
 
-![WPGraphiQL page](./docs/wp-graphiql.png)
+- [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
 
-### Step 2. Populate Content
+## Author
 
-Inside your WordPress admin, go to **Posts** and start adding new posts:
-
-- We recommend creating at least **2 posts**
-- Use dummy data for the content
-- Pick an author from your WordPress users
-- Add a **Featured Image**. You can download one from [Unsplash](https://unsplash.com/)
-- Fill the **Excerpt** field
-
-![New post](./docs/new-post.png)
-
-When you’re done, make sure to **Publish** the posts.
-
-> **Note:** Only **published** posts and public fields will be rendered by the app unless [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode) is enabled.
-
-### Step 3. Set up environment variables
-
-Copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
-
-```bash
-cp .env.local.example .env.local
-```
-
-Then open `.env.local` and set `WORDPRESS_API_URL` to be the URL to your GraphQL endpoint in WordPress. For example: `https://myapp.wpengine.com/graphql`.
-
-Your `.env.local` file should look like this:
-
-```bash
-WORDPRESS_API_URL=...
-
-# Only required if you want to enable preview mode
-# WORDPRESS_AUTH_REFRESH_TOKEN=
-# WORDPRESS_PREVIEW_SECRET=
-```
-
-### Step 4. Run Next.js in development mode
-
-```bash
-npm install
-npm run dev
-
-# or
-
-yarn install
-yarn dev
-```
-
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
-
-### Step 5. Add authentication for Preview Mode (Optional)
-
-**This step is optional.** By default, the blog will work with public posts from your WordPress site. Private content such as unpublished posts and private fields cannot be retrieved. To have access to unpublished posts you'll need to set up authentication.
-
-To add [authentication to WPGraphQL](https://docs.wpgraphql.com/guides/authentication-and-authorization/), first you need to add the [WPGraphQL JWT plugin](https://github.com/wp-graphql/wp-graphql-jwt-authentication) to your WordPress Admin following the same process you used to add the WPGraphQL plugin.
-
-> Adding the WPGraphQL JWT plugin will disable your GraphQL API until you add a JWT secret ([GitHub issue](https://github.com/wp-graphql/wp-graphql-jwt-authentication/issues/91)).
-
-Once that's done, you'll need to access the WordPress filesystem to add the secret required to validate JWT tokens. We recommend using SFTP — the instructions vary depending on your hosting provider. For example:
-
-- [SFTP guide for WP Engine](https://wpengine.com/support/sftp/)
-- [SFTP guide for WordPress.com](https://wordpress.com/support/sftp/)
-
-Once you have SFTP access, open `wp-config.php` and add a secret for your JWT:
-
-```php
-define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'YOUR_STRONG_SECRET' );
-```
-
-> You can read more about this in the documentation for [WPGraphQL JWT Authentication](https://docs.wpgraphql.com/extensions/wpgraphql-jwt-authentication/).
-
-Now, you need to get a **refresh token** to make authenticated requests with GraphQL. Make the following GraphQL mutation to your WordPress site from the GraphQL IDE (See notes about WPGraphiQL from earlier). Replace `your_username` with the **username** of a user with the `Administrator` role, and `your_password` with the user's password.
-
-```graphql
-mutation Login {
-  login(
-    input: {
-      clientMutationId: "uniqueId"
-      password: "your_password"
-      username: "your_username"
-    }
-  ) {
-    refreshToken
-  }
-}
-```
-
-Copy the `refreshToken` returned by the mutation, then open `.env.local`, and make the following changes:
-
-- Uncomment `WORDPRESS_AUTH_REFRESH_TOKEN` and set it to be the `refreshToken` you just received.
-- Uncomment `WORDPRESS_PREVIEW_SECRET` and set it to be any random string (ideally URL friendly).
-
-Your `.env.local` file should look like this:
-
-```bash
-WORDPRESS_API_URL=...
-
-# Only required if you want to enable preview mode
-WORDPRESS_AUTH_REFRESH_TOKEN=...
-WORDPRESS_PREVIEW_SECRET=...
-```
-
-**Important:** Restart your Next.js server to update the environment variables.
-
-### Step 6. Try preview mode
-
-On your WordPress admin, create a new post like before, but **do not publish** it.
-
-Now, if you go to `http://localhost:3000`, you won’t see the post. However, if you enable **Preview Mode**, you'll be able to see the change ([Documentation](https://nextjs.org/docs/advanced-features/preview-mode)).
-
-To enable Preview Mode, go to this URL:
-
-```
-http://localhost:3000/api/preview?secret=<secret>&id=<id>
-```
-
-- `<secret>` should be the string you entered for `WORDPRESS_PREVIEW_SECRET`.
-- `<id>` should be the post's `databaseId` field, which is the integer that you usually see in the URL (`?post=18` → 18).
-- Alternatively, you can use `<slug>` instead of `<id>`. `<slug>` is generated based on the title.
-
-You should now be able to see this post. To exit Preview Mode, you can click on **Click here to exit preview mode** at the top.
-
-### Step 7. Deploy on Vercel
-
-You can deploy this app to the cloud with [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-#### Deploy Your Local Project
-
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example).
-
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to match your `.env.local` file.
-
-#### Deploy from Our Template
-
-Alternatively, you can deploy using our template by clicking on the Deploy button below.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/cms-wordpress&project-name=cms-wordpress&repository-name=cms-wordpress&env=WORDPRESS_API_URL&envDescription=Required%20to%20connect%20the%20app%20with%20WordPress&envLink=https://vercel.link/cms-wordpress-env)
+- Steven Tey ([@steventey](https://twitter.com/steventey))
